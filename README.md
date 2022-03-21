@@ -10,4 +10,13 @@ Las entradas de este archivo también pueden seguir un patrón coincidente:
 
 - "*" se utiliza como una coincidencia comodín.
 - "/" se usa para ignorar las rutas relativas al archivo .gitignore.
-- "#" es usado para agregar comentarios
+- "#" es usado para agregar comentarios.
+
+
+## Ejercicio 2
+
+### Punto 3. b) y c)
+El resultado es el mismo debido a que el contenido del puntero es la direccón de memoria de la variable a la que apunta (variable a).
+
+### Punto 3. d)
+Se obtiene la dirección de memoria del puntero. Ésta dirección no es igual a las anteriores (apartados b y c), que son la dirección de memoria de la variable a.
