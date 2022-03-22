@@ -12,4 +12,5 @@ int main() {
     printf("Direccion de memoria del puntero: %p\n",&punt);
     printf("Tamanio de memoria utilizado por la variable a: %d\n",sizeof(a));//sizeof(): función que recibe como único parámetro o el nombre de una variable, o el nombre de un tipo de datos, y devuelve su tamaño en bytes
 
+    return 0;
 }
