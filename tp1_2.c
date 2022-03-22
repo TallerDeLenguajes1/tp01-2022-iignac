@@ -3,11 +3,11 @@
 int cuadrado(int num); // a)
 void cuad(int num); // b)
 void mostrar(int num); // c)
-void invertir(int a, int b); // d)
-void orden(int a, int b); // e)
+void invertir(int *a, int *b); // d)
+void orden(int *a, int *b); // e)
 
 int main() {
-    int numero = 3, resultado, a, b;
+    int numero = 3, resultado;
 
     // a)
     resultado = cuadrado(numero);
@@ -21,16 +21,33 @@ int main() {
 
     /////////////////
 
-    printf("Ingrese el valor de la variable entera a: ");
-    scanf("%d",&a);
-    printf("Ingrese el valor de la variable entera b: ");
-    scanf("%d",&b);
-
     // d)
-    invertir(a, b);
+    int x, y;
+    printf("Ingrese los valores a invertir. Primer valor x: ");
+    scanf("%d",&x);
+    printf("Segundo valor y: ");
+    scanf("%d",&y);
+
+    invertir(&x, &y);
+
+    printf("Valor de x en la variable y: %d\n",y);
+    printf("Valor de y en la variable x: %d\n",x);
+
+    ///////////////
 
     // e)
-    orden(a, b);
+    int r, s;
+    printf("Ingrese los valores a ordenar. Primer valor r: ");
+    scanf("%d",&r);
+    printf("Segundo valor s: ");
+    scanf("%d",&s);
+
+    invertir(&r, &s);
+
+    printf("Valor mas chico en la variable r: %d\n",r);
+    printf("Valor mas grande en la variable s: %d\n",s);
+
+    //getchar(); solo poner en caso que se cierre la consola CMD al debugear
 
     return 0;
 }
@@ -54,24 +71,20 @@ void mostrar(int num) {
 }
 
 // d)
-void invertir(int a, int b) {
+void invertir(int *a, int *b) {
     int c;
-    c = a;
-    a = b;
-    b = c;
-    printf("Valor de a en la variable b: %d\n",b);
-    printf("Valor de b en la variable a: %d\n",a);
+    c = *a;
+    *a= *b;
+    *b = c;
 }
 
 // e)
-void orden(int a, int b) {
-    int aux;
-    if (a > b)
+void orden(int *a, int *b) {
+    if (*a > *b)
     {
-        aux = a;
-        a = b;
-        b = aux;
+        int aux;
+        aux = *a;
+        *a = *b;
+        *b = aux;
     }
-    printf("Valor mas chico en la variable a: %d\n",a);
-    printf("Valor mas grande en la variable b: %d\n",b);
 }
